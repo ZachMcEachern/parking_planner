@@ -23,6 +23,9 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
 
+    <!-- Dropdown styles -->
+
+
   </head>
 
   <body id="page-top">
@@ -34,6 +37,8 @@
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
+
+
 
       <!-- Navbar Search -->
 
@@ -132,6 +137,55 @@
       <div id="content-wrapper">
 
         <div class="container-fluid">
+
+          <div class="form-group row">
+  <label for="example-time-input" class="col-2 col-form-label">Time</label>
+  <div class="col-10">
+    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+  </div>
+</div>
+
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Select a parking structure:</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Nutwood Parking Structure</option>
+                <option>State College Structure</option>
+                <option>Eastside Structure</option>
+                <option>Lot A & G</option>
+                <option>EvFree Church</option>
+              </select>
+            </div>
+          </form>
+
+          <div class="parking-spaces">
+        	<h3> Parking Spaces </h3>
+	        	<table class="table table-striped table-bordered" style="width: auto;">
+				  <tbody>
+				    <tr>
+				      <td>Nutwood Parking Structure</td>
+				      <td>100</td>
+				    </tr>
+				    <tr>
+				      <td>Eastside Parking Structure</td>
+				      <td>300</td>
+				    </tr>
+				    <tr>
+				      <td>State College Parking Structure</td>
+				      <td>300</td>
+				    </tr>
+				    <tr>
+				      <td>Lot A/G</td>
+				      <td>2000</td>
+				    </tr>
+            <tr>
+				      <td>EvFree Church</td>
+				      <td>2000</td>
+				    </tr>
+
+				  </tbody>
+				</table>
+			</div>
 
           <!-- Breadcrumbs
           <ol class="breadcrumb">
