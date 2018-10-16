@@ -90,7 +90,7 @@
               <div class="form-group">
                 <label for="example-time-input">Time:</label>
                 <div class="col-10">
-                  <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                  <input class="form-control" type="time" value="13:45:00" id="time-input">
                 </div>
               </div>
 
@@ -100,7 +100,7 @@
             <form>
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Select a parking structure:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="parking-structure">
                   <option>Nutwood Parking Structure</option>
                   <option>State College Structure</option>
                   <option>Eastside Structure</option>
@@ -113,6 +113,10 @@
 
         <!-- row -->
           </div>
+
+          <div class="row justify-content-md-center">
+			<a href="info.html"><button onClick="getData()" class="btn btn-primary">Submit</button></a>
+		</div>
 
         <div class="row justify-content-md-center">
           <div class="parking-spaces">
@@ -252,6 +256,9 @@
               How to use this site
             </button>
 
+
+
+
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -276,9 +283,8 @@
           <!-- /.Row -->
           </div>
 
-
         <!-- /.container-fluid -->
-      </div>
+	</div>
 
 
 
@@ -312,6 +318,18 @@
       </div>
     </div>
 
+    <script>
+    	function getData() {
+	    	if (typeof(Storage) !== "undefined") {
+			    // Code for localStorage/sessionStorage.
+			    sessionStorage.time = document.getElementById("time-input").value;
+			    sessionStorage.structure = document.getElementById("parking-structure").value;
+			} else {
+			    alert("session storage fail");
+			}
+		}
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -330,6 +348,7 @@
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
+
 
   </body>
 
