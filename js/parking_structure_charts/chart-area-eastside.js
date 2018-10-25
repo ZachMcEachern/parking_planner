@@ -2,6 +2,26 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
+var time = sessionStorage.time;
+var tSplit= time.split(":");
+var pm = false;
+
+if(tSplit[0] > 12){
+  tSplit[0] = tSplit[0] - 12;
+  pm = true;
+}
+time = '0' + tSplit[0] + ':' + tSplit[1];// + ':' + tSplit[2];
+
+
+function index(time){
+  if(pm == true){
+  return timeSlots.lastIndexOf(time);
+}
+  else{
+  return timeSlots.indexOf(time);
+}
+};
+
 // Parking Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
@@ -50,7 +70,8 @@ var myLineChart = new Chart(ctx, {
       display: false
     }
   },
-  lineAtIndex: [2]
+  // NEW LINE
+  lineAtIndex: [index(time)]
 });
 
 const verticalLinePlugin = {
