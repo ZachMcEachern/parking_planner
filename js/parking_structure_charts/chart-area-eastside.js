@@ -1,6 +1,10 @@
 // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
+var timeSlots = ["07:00", "07:15", "07:30", "07:45", "08:00", "08:15", "08:30", "08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30",
+"11:45", "12:00", "12:15", "12:30", "12:45", "01:00", "01:15", "01:30", "01:45", "02:00", "02:15", "02:30", "02:45", "03:00", "03:15", "03:30", "03:45", "04:00", "04:15", "04:30",
+"04:45", "05:00", "05:15", "05:30", "05:45", "06:00", "06:15", "06:30", "06:45", "07:00", "07:15", "07:30", "07:45", "08:00", "08:15", "08:30", "08:45", "09:00", "09:15", "09:30",
+"09:45", "10:00"]
 
 var time = sessionStorage.time;
 var tSplit= time.split(":");
@@ -9,8 +13,11 @@ var pm = false;
 if(tSplit[0] > 12){
   tSplit[0] = tSplit[0] - 12;
   pm = true;
+  time = '0' + tSplit[0] + ':' + tSplit[1];
 }
-time = '0' + tSplit[0] + ':' + tSplit[1];// + ':' + tSplit[2];
+else
+time = tSplit[0] + ':' + tSplit[1];
+
 
 
 function index(time){
@@ -27,9 +34,9 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["7:00", "7:15", "7:30", "7:45", "8:00", "8:15", "8:30", "8:45", "9:00", "9:15", "9:30", "9:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "1:00", "1:15", "1:30", "1:45", "2:00", "2:15", "2:30", "2:45", "3:00", "3:15", "3:30", "3:45", "4:00", "4:15", "4:30", "4:45", "5:00", "5:15", "5:30", "5:45", "6:00", "6:15", "6:30", "6:45", "7:00", "7:15", "7:30", "7:45", "8:00", "8:15", "8:30", "8:45", "9:00", "9:15", "9:30", "9:45", "10:00"],
+    labels: timeSlots,
     datasets: [{
-      label: "Time",
+      label: "Parked Cars",
       lineTension: 0.3,
       backgroundColor: "rgba(2,17,216,0.2)",
       borderColor: "rgba(2,17,216,1)",
@@ -40,7 +47,9 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,17,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
+        //7am             8am                 9am                 10am                11am                 12pm                1pm                 2pm                 3pm                 4pm                 5pm                 6pm                 7pm                8pm                  9pm                 10pm
       data: [49, 125, 208, 354, 523, 682, 705, 856, 932, 1008, 1134, 1198, 1263, 1302, 1320, 1359, 1360, 1365, 1365, 1362, 1363, 1364, 1365, 1364, 1360, 1358, 1365, 1363, 1365, 1320, 1305, 1298, 1250, 1230, 1218, 1206, 1189, 1130, 1097, 1003, 952, 870, 783, 682, 597, 503, 453, 389, 305, 235, 198, 121, 87, 53, 34, 20, 17, 12, 5, 1, 0],
+    }],
   },
   options: {
     scales: {

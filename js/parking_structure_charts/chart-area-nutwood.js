@@ -14,8 +14,10 @@ var pm = false;
 if(tSplit[0] > 12){
   tSplit[0] = tSplit[0] - 12;
   pm = true;
+  time = '0' + tSplit[0] + ':' + tSplit[1];
 }
-time = '0' + tSplit[0] + ':' + tSplit[1];// + ':' + tSplit[2];
+else
+time = tSplit[0] + ':' + tSplit[1];
 
 
 function index(time){
@@ -33,7 +35,7 @@ var myLineChart = new Chart(ctx, {
   data: {
 	labels: timeSlots,
 	datasets: [{
-  	label: "Time",
+  	label: "Parked Cars",
   	lineTension: 0.3,
   	backgroundColor: "rgba(2,17,216,0.2)",
   	borderColor: "rgba(2,17,216,1)",
