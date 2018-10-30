@@ -1,0 +1,16 @@
+.navbar-custom{
+	background-color:#f48221;
+	color:#fff;
+}
+
+.sidebar-custom{
+	background-color:#004070 !important;
+}
+
+li>a{
+color:#fff !important;
+}
+
+li>a:hover{
+color:orange !important;
+}

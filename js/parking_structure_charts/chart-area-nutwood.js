@@ -119,7 +119,7 @@ const verticalLinePlugin = {
   	context.fillStyle = "#000000";
   	context.font = "normal 30px Arial";
   	context.textAlign = 'center';
-  //	context.fillText('test', lineLeftOffset + 40, (scale.bottom - scale.top) / 2 + scale.top);
+    context.fillText('Time', lineLeftOffset + 40, (scale.bottom - scale.top) / 2 + scale.top);
   },
 
   afterDatasetsDraw: function (chart, easing) {
