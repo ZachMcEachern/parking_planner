@@ -48,7 +48,21 @@ var myLineChart = new Chart(ctx, {
       pointHitRadius: 50,
       pointBorderWidth: 2,
         //7am             8am                 9am                 10am                11am                 12pm                1pm                 2pm                 3pm                 4pm                 5pm                 6pm                 7pm                8pm                  9pm                 10pm
-      data: [49, 125, 208, 354, 523, 682, 705, 856, 932, 1008, 1134, 1198, 1263, 1302, 1320, 1359, 1360, 1365, 1365, 1362, 1363, 1364, 1365, 1364, 1360, 1358, 1365, 1363, 1365, 1320, 1305, 1298, 1250, 1230, 1218, 1206, 1189, 1130, 1097, 1003, 952, 870, 783, 682, 597, 503, 453, 389, 305, 235, 198, 121, 87, 53, 34, 20, 17, 12, 5, 1, 0],
+      data: [49, 125, 208, 354,
+        523, 682, 705, 856,
+        932, 1008, 1134, 1158,
+        1190, 1202, 1320, 1159,
+        1190, 1265, 1363, 1122,
+        1183, 1264, 1354, 1194,
+        1199, 1258, 1360, 1203,
+        1265, 1290, 1365, 1198,
+        1250, 1230, 1218, 1106,
+        1189, 1130, 1097, 903,
+        952, 870, 783, 682,
+        597, 503, 453, 389,
+        305, 235, 198, 121,
+        87, 53, 34, 20,
+        17, 12, 5, 1, 0],
     }],
   },
   options: {
@@ -105,7 +119,7 @@ const verticalLinePlugin = {
       context.fillStyle = "#000000";
       context.font = "normal 30px Arial";
       context.textAlign = 'center';
-      context.fillText('test', lineLeftOffset + 40, (scale.bottom - scale.top) / 2 + scale.top);
+      context.fillText('Time', lineLeftOffset + 40, (scale.bottom - scale.top) / 2 + scale.top);
   },
 
   afterDatasetsDraw: function (chart, easing) {
