@@ -26,7 +26,7 @@
     <!-- Custom CSS for the CSUF themed colors. -->
     <link href="css/Style.css" rel="stylesheet">
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Dropdown styles -->
 
 
   </head>
@@ -52,7 +52,7 @@
 
       <!-- Sidebar -->
       <ul class="sidebar-custom sidebar navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="http://parking.fullerton.edu/parking/Maps.php">
 
             <i class="fas fa-fw fa-map"></i>
@@ -96,10 +96,10 @@
             </div>
           </div>
 
+          <div id="message"></div>
           <!-- Change structure and time button -->
           <a class="btn btn-primary btn-lg" href="index.html" role="button">Change Structure or Time</a>
-          <div id="test">
-          </div>
+
         <!-- /.container-fluid -->
         </div>
 
@@ -133,8 +133,6 @@
       </div>
     </div>
 
-    <script src = "js/calc.js"> </script>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -151,8 +149,14 @@
     <script src="js/sb-admin.min.js"></script>
 
     <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src='js/parking_structure_charts/spaces.js'></script>
+    <script src="js/parking_structure_charts/datatables-demo.js"></script>
+    <script src="js/parking_structure_charts/chart-area.js"></script>
+
+    <script>
+      document.getElementById("message").innerHTML += "You need to get here by " + '<b>' + time + '</b>.<br>';
+      document.getElementById("message").innerHTML += "We recommend you find a space at " + '<b>' + timeSlots[recommendIndex(time)] + '</b>.';
+    </script>
 
   </body>
-
 </html>
