@@ -14,3 +14,12 @@ color:#fff !important;
 li>a:hover{
 color:orange !important;
 }
+
+.div-tuffy img{
+position: absolute;
+right:0;
+bottom:0;
+object-fit: contain;
+height:20%;
+width:20%;
+}
