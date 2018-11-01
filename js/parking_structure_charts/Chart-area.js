@@ -18,7 +18,7 @@ if (structure == 'Nutwood Parking Structure') {
 } else if (structure == 'Lot A & G') {
   max_spaces = 2104;
   spaces = lotag_spaces;
-} else if (structure == 'EvFree Church') {
+} else  {
   max_spaces = 550;
   spaces = church_spaces;
 }
